@@ -59,7 +59,7 @@ func TestCreateOrderHandler(t *testing.T) {
 		{
 			name:           "failed order creation (invalid JSON input)",
 			requestBody:    `{"total": "invalid"}`,
-			mockReturn:     errors.New("Invalid request"),
+			mockReturn:     nil, // service didn't return anything
 			expectedStatus: http.StatusBadRequest,
 			expectedError:  "Invalid request",
 		},
