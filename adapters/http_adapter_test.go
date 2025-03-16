@@ -63,6 +63,13 @@ func TestCreateOrderHandler(t *testing.T) {
 			expectedStatus: http.StatusBadRequest,
 			expectedError:  "Invalid request",
 		},
+		{
+			name:           "failed order creation (service error)",
+			requestBody:    `{"total": 100}`,
+			mockReturn:     errors.New("service error"),
+			expectedStatus: http.StatusInternalServerError,
+			expectedError:  "service error",
+		},
 	}
 
 	for _, tt := range tests {
