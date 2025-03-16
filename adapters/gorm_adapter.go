@@ -1,8 +1,9 @@
 package adapters
 
 import (
-	"gorm.io/gorm"
 	"kobeieii/core"
+
+	"gorm.io/gorm"
 )
 
 type GormOrderRepository struct {
